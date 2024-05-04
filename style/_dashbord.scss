@@ -1,0 +1,140 @@
+.content {
+  .dashbord-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .info {
+      display: flex;
+      justify-content: space-between;
+      color: #000000;
+      .dashboard-side {
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 28.44px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 21.79px;
+          letter-spacing: 1px;
+        }
+      }
+      .date {
+        font-size: 16px;
+        line-height: 21.79px;
+        align-self: flex-end;
+      }
+    }
+
+    // PAYMENT CARDS
+    .payment-cards {
+      display: flex;
+      gap: 14px;
+      .payment-card {
+        background-color: #fafafa;
+        padding: 24px 16px;
+        border-radius: 16px;
+        width: 25%;
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16.34px;
+          text-align: right;
+        }
+        .flex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+
+          .price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            i {
+              padding: 10px;
+              background-color: #003f62;
+              color: #ffffff;
+              border-radius: 8px;
+            }
+            span {
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 18.96px;
+              color: #000000;
+            }
+          }
+          .percent {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+      }
+    }
+
+    .recent-orders {
+      border-radius: 16px;
+      background-color: #f8f8f8;
+      padding: 24px 16px;
+      .head_recent-orders {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 23.7px;
+        padding: 0 0 16px;
+        margin-bottom: 16px;
+        border-bottom: 0.5px solid #23232133;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      // Recent ORDERS
+      table {
+        width: 100%;
+        tr {
+          
+          td {
+            padding: 25px 0 10px;
+            border-bottom: 0.5px solid #23232133;
+            &:first-child{
+              display: flex;
+              gap: 30px;
+              label{
+              cursor: pointer;
+              }
+              input{
+                width: 20px;
+              cursor: pointer;
+
+              }
+            }
+            &:not(&:first-child){
+              text-align: center;
+            }
+          }
+          &:first-child{
+            color: #232321CC ;
+            font-size: 16px;
+            font-weight: 600;
+          line-height: 18.96px;
+            td{
+              padding: 16px 0;
+            }
+          }
+          .customer-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            img {
+              width: 40px;
+              background-color: #fff;
+              padding: 5px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

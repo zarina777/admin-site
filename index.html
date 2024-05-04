@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+   <!-- Icons Fontawsome Online-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style/imports.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="admin-model">
+      <h5>Admin</h5>
+      <div class="flex">
+      <p>Change password</p>
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+    <div class="flex">
+      <p>Log out</p>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </div>
+  </div>
+    <!-- Side Bar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="./images/logo.png" alt="">
+      </div>
+      <ul class="navbar">
+        <li class=" nav-dashbord">
+          <i class="fa-brands fa-slack"></i>
+          <span>Dashboard</span>
+        </li>
+        <li class=" nav-products">
+          <i class="fa-solid fa-box"></i>
+          <span>Products</span>
+        </li>
+        <li class=" nav-order">
+          <i class="fa-regular fa-rectangle-list"></i>
+          <span>Order list</span>
+        </li>
+      </ul>
+      <div class="categories">
+        <div class="category-btn">
+          <h3>Categories</h3>
+        <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="category-dropdown">
+          <div class="item onItem"><p>Lorem Ipsum</p> <span>21</span></div>
+          <div class="item"><p>Lorem Ipsum</p> <span>21</span></div>
+          <div class="item"><p>Lorem Ipsum</p> <span>21</span></div>
+          <div class="item"><p>Lorem Ipsum</p> <span>21</span></div>
+          <div class="item"><p>Lorem Ipsum</p> <span>21</span></div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Navbar Top -->
+    <ul class="top-navbar">
+      <li><i class="fa-solid fa-magnifying-glass"></i></li>
+      <li><i class="fa-solid fa-bell"></i></li>
+      <li>
+      <div id="account" class="account">
+        <h4>admin</h4>
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </li>
+</ul>
+
+    <!-- Main Content -->
+    <div class="mainContent">
+      
+      <!-- CONTENT that changes over sidebar navbar -->
+      <div class="content">
+        <!-- DASHBORD SECTION -->
+        <div class="dashbord-section">
+        <div class="info">
+          <div class="dashboard-side">
+            <h3>Dashboard</h3>
+            <p>Home><span>Dashboard</span></p>
+          </div>
+          <div class="date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Oct 11,2023 - Nov 11,2022</span>
+          </div>
+        </div>
+        
+        <div class="payment-cards">
+          <div class="payment-card">
+            <div class="flex"><h4>Total Oders</h4><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            <div class="flex"><div class="price"><i class="fa-solid fa-bag-shopping"></i><span>₹126.500</span></div>
+            <div class="percent"><i class="fa-solid fa-arrow-up"></i><span>34.7%</span></div></div>
+            <p>Compared to Oct 2023</p>
+          </div>
+          <div class="payment-card">
+            <div class="flex"><h4>Total Oders</h4><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            <div class="flex"><div class="price"><i class="fa-solid fa-bag-shopping"></i><span>₹126.500</span></div>
+            <div class="percent"><i class="fa-solid fa-arrow-up"></i><span>34.7%</span></div></div>
+            <p>Compared to Oct 2023</p>
+          </div>
+          <div class="payment-card">
+            <div class="flex"><h4>Total Oders</h4><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            <div class="flex"><div class="price"><i class="fa-solid fa-bag-shopping"></i><span>₹126.500</span></div>
+            <div class="percent"><i class="fa-solid fa-arrow-up"></i><span>34.7%</span></div></div>
+            <p>Compared to Oct 2023</p>
+          </div>
+          <div class="payment-card">
+            <div class="flex"><h4>Total Oders</h4><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            <div class="flex"><div class="price"><i class="fa-solid fa-bag-shopping"></i><span>₹126.500</span></div>
+            <div class="percent"><i class="fa-solid fa-arrow-up"></i><span>34.7%</span></div></div>
+            <p>Compared to Oct 2023</p>
+          </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <div class="recent-orders">
+          <div class="head_recent-orders">
+            <h4>Recent Orders</h4>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <input id="products" type="checkbox">
+                <label for="products">Products</label>
+              </td>
+              <td>Order ID</td>
+              <td>Date</td>
+              <td>Customer Name</td>
+              <td>Status</td>
+              <td>Amount</td>
+            </tr>
+
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+              <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+              <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+                <td>₹200.00</td>
+              </tr>
+              <tr>
+                <td><input id="p1" type="checkbox">
+                  <label for="p1">Lorem Ipsum</label></td>
+                  <td>#25426</td>
+                  <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="p1" type="checkbox">
+                <label for="p1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+
+
+          </table>
+        </div>
+
+      </div>
+
+      
+      <!-- PRODUCTS SECTION -->
+      <div class="products-section">
+        <div class="info">
+          <div class="dashboard-side">
+            <h3>All Products</h3>
+            <p>Home><span>All Products</span></p>
+          </div>
+          <button>
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>ADD NEW PRODUCT</span>
+          </button>
+        </div>
+        <div class="products-wrap">
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product">
+            <div class="about">
+              <div class="flex">
+                <img src="./images/product.png" alt="">
+                <div class="info-about">
+                  <p>Lorem Ipsum</p>
+                  <span>Battery</span>
+                  <h4>₹110.40</h4>
+                </div>
+              </div>
+              <div class="btns">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="summary">
+              <span>Summary</span>
+              <p>Lorem ipsum is placeholder text commonly used in the graphic.</p>
+            </div>
+            <div class="product-footer">
+              <div class="item_product-footer">
+                <p>Sales</p>
+                <div class="flex">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+              <div class="item_product-footer">
+                <p>Remaining Products</p>
+                <div class="flex">
+                  <i class="fa-solid fa-minus"></i>
+                  <span>1269</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pagesOfProduct">
+          <div class="page">1</div>
+          <div class="page">2</div>
+          <div class="page">3</div>
+          <div class="remaining_page">...</div>
+          <div class="page">10</div>
+        <div class="page"><span>Next</span><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+
+      <!-- ORDERS SECTION -->
+      <div class="orders-section">
+        <div class="info">
+          <div class="dashboard-side">
+            <h3>Orders List</h3>
+            <p>Home><span>Order List</span></p>
+          </div>
+          <div class="date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Feb 16,2022 - Feb 20,2022</span>
+          </div>
+        </div>
+          <select>
+            <option value="">Change status</option>
+          </select>
+             <!-- Orders -->
+        <div class="orders">
+          <div class="head_orders">
+            <h4>Recent Purchases</h4>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <input id="products1" type="checkbox">
+                <label for="products1">Products</label>
+              </td>
+              <td>Order ID</td>
+              <td>Date</td>
+              <td>Customer Name</td>
+              <td>Status</td>
+              <td>Amount</td>
+            </tr>
+
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+              <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+              <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+                <td>Nov 8th,2023</td>
+                <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+                <td>Delivered</td>
+                <td>₹200.00</td>
+              </tr>
+              <tr>
+                <td><input id="order1" type="checkbox">
+                  <label for="order1">Lorem Ipsum</label></td>
+                  <td>#25426</td>
+                  <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+            <tr>
+              <td><input id="order1" type="checkbox">
+                <label for="order1">Lorem Ipsum</label></td>
+                <td>#25426</td>
+              <td>Nov 8th,2023</td>
+              <td class="customer-name"><img src="./images/customer.png" alt=""><h4>Kavin</h4></td>
+              <td>Delivered</td>
+              <td>₹200.00</td>
+            </tr>
+
+
+          </table>
+        </div>
+        <div class="pagesOfProduct">
+          <div class="page">1</div>
+          <div class="page">2</div>
+          <div class="page">3</div>
+          <div class="remaining_page">...</div>
+          <div class="page">10</div>
+        <div class="page"><span>Next</span><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+      </div>
+
+      
+      <!-- Footer -->
+      <div class="footer">
+        <span></span>
+          <div class="info">
+            <p>© 2023 - pulstron Dashboard</p>
+        <ul>
+          <li><a href="">About</a></li>
+          <li><a href="">Career</a></li>
+          <li><a href="">Policy</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+          </div>
+        </div>
+        <div id="bg-wrap"></div>
+      </div>
+      
+
+  
+      <script src="./script.js"></script>
+    </body>
+</html>

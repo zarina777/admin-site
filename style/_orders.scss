@@ -1,0 +1,128 @@
+.content{
+	.orders-section{
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		.info {
+			display: flex;
+			justify-content: space-between;
+			color: #000000;
+			.dashboard-side {
+			  h3 {
+				font-size: 24px;
+				font-weight: 600;
+				line-height: 28.44px;
+			  }
+			  p {
+				font-size: 16px;
+				line-height: 21.79px;
+				letter-spacing: 1px;
+			  }
+			}
+			.date {
+			  font-size: 16px;
+			  line-height: 21.79px;
+			  align-self: flex-end;
+			}
+		  }
+		select{
+			align-self:flex-end;
+			padding: 14px 20px;
+			outline: none;
+			border: none;
+			border-radius:8px;
+			font-size: 17px;
+			background-color: #F4F2F2;
+		}
+		.orders {
+			border-radius: 16px;
+			background-color: #f8f8f8;
+			padding: 24px 16px;
+			.head_orders {
+			  font-size: 20px;
+			  font-weight: 600;
+			  line-height: 23.7px;
+			  padding: 0 0 16px;
+			  margin-bottom: 16px;
+			  border-bottom: 0.5px solid #23232133;
+			  display: flex;
+			  align-items: center;
+			  justify-content: space-between;
+			}
+			// Recent ORDERS
+			table {
+			  width: 100%;
+			  tr {
+				
+				td {
+				  padding: 25px 0 10px;
+				  border-bottom: 0.5px solid #23232133;
+				  &:first-child{
+					display: flex;
+					gap: 30px;
+					label{
+					cursor: pointer;
+					}
+					input{
+					  width: 20px;
+					cursor: pointer;
+	  
+					}
+				  }
+				  &:not(&:first-child){
+					text-align: center;
+				  }
+				}
+				&:first-child{
+				  color: #232321CC ;
+				  font-size: 16px;
+				  font-weight: 600;
+				line-height: 18.96px;
+				  td{
+					padding: 16px 0;
+				  }
+				}
+				.customer-name {
+				  display: flex;
+				  justify-content: center;
+				  align-items: center;
+				  gap: 10px;
+				  img {
+					width: 40px;
+					background-color: #fff;
+					padding: 5px;
+					border-radius: 50%;
+				  }
+				}
+			  }
+			}
+		  }
+	.pagesOfProduct{
+			display: flex;
+			gap: 16px;
+			font-size: 14px;
+			align-items:stretch;
+			div{
+				cursor: pointer;
+			}
+			.remaining_page{
+				align-self:flex-end;
+				padding-bottom: 5px;
+				font-size: 19px;
+			}
+			.page{
+				padding: 8px 16px;
+				border: 1px solid #232321;
+				border-radius: 8px;
+				display: flex;
+				align-items:center;
+				gap: 10px;
+
+				span{
+					text-transform: uppercase;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
