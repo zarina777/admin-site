@@ -77,5 +77,4 @@ accountBtn.onclick=()=>{
 bgWrap.onclick=()=>{
 	bgWrap.style.display='none'
 	accountModel.style.display='none'
-
 }
