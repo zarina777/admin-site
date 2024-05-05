@@ -38,7 +38,7 @@
 
 		.products-wrap{
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			gap: 14px;
 			flex-wrap: wrap;
 			.product{
@@ -55,6 +55,7 @@
 					display: flex;
 					.flex{
 						display: flex;
+						gap: 15px;
 						.info-about{
 							p{
 								font-weight: 600;
@@ -73,6 +74,7 @@
 							}
 						}
 						img{
+							object-fit: cover;
 							background-color: transparent;
 							height: 84px;
 							width: 84px;
@@ -99,14 +101,6 @@
 							color: rgb(4, 4, 188);
 						}
 					}
-					// .fa-ellipsis{
-					// 	border-radius:4px;
-					// 	padding: 6px 12px;
-					// 	font-size: 20px;
-					// 	color: #2323218a;
-					// 	align-self: flex-start;
-					// 	background-color: #2323210D;
-					// }
 				}
 				.summary{
 					display: flex;
