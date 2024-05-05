@@ -419,24 +419,28 @@ button {
   /* HTML: <div class="loader"></div> */
 }
 .content .products-section .products-wrap .loader {
-  width: 60px;
-  aspect-ratio: 4;
-  background: radial-gradient(circle closest-side, #000 90%, rgba(0, 0, 0, 0)) 0/33.3333333333% 100% space;
-  -webkit-clip-path: inset(0 100% 0 0);
-          clip-path: inset(0 100% 0 0);
-  -webkit-animation: l1 1s steps(4) infinite;
-          animation: l1 1s steps(4) infinite;
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000000;
+  --_m: conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  -webkit-animation: l3 1s infinite linear;
+          animation: l3 1s infinite linear;
 }
-@-webkit-keyframes l1 {
+@-webkit-keyframes l3 {
   to {
-    -webkit-clip-path: inset(0 -34% 0 0);
-            clip-path: inset(0 -34% 0 0);
+    transform: rotate(1turn);
   }
 }
-@keyframes l1 {
+@keyframes l3 {
   to {
-    -webkit-clip-path: inset(0 -34% 0 0);
-            clip-path: inset(0 -34% 0 0);
+    transform: rotate(1turn);
   }
 }
 .content .products-section .products-wrap .product {
