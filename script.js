@@ -172,93 +172,195 @@ function writeToProducts() {
     });
 })();
 
-
-
 // CATEGORY
-let categoryItemsWarp= document.querySelector('.category_items');
-(()=>{
-	fetch('http://localhost:3000/categories').then(res=>res.json()).then(data=>{
-		data.forEach((el)=>{
-			categoryItemsWarp.innerHTML+=`
+let categoryItemsWarp = document.querySelector(".category_items");
+(() => {
+  fetch("http://localhost:3000/categories")
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((el) => {
+        categoryItemsWarp.innerHTML += `
 			<div class="item"><p>${el.name}</p> <span onclick="categoryDeteleFn('${el.id}')">-</span></div>
-			`
-		})
-	})
-})()
+			`;
+      });
+    });
+})();
 
-document.querySelector('.add_category').addEventListener('click',()=>{
-	let div = document.createElement('div')
-	div.classList.add('wrap_input_category')
-	let input= document.createElement('input')
-	input.classList.add('input_category')
-	input.required=true
-	input.placeholder='Category Name'
-	let btnSave = document.createElement('span')
-	let btnCancel = document.createElement('span')
-	btnSave.textContent='save'
-	btnSave.classList.add('save')
-	btnCancel.textContent='cancel'
-	btnCancel.classList.add('cancel')
-	btnCancel.addEventListener('click',(e)=>{
-		e.preventDefault()
-		btnCancel.parentElement.remove()
-	})
-	document.querySelector('.category_items').append(div)
-	div.append(input,btnSave,btnCancel)
-	btnCancel.addEventListener('click',()=>{
-		btnCancel.parentElement.remove()
-	})
-	btnSave.addEventListener('click',()=>{
-		if(btnSave.previousElementSibling.value.trim().length){
-			fetch('http://localhost:3000/categories',{
-			method:'POST',
-			headers:{'Content-type':'application/json'},
-			body:JSON.stringify(
-				{
-		
-					name:btnSave.previousElementSibling.value
-			
-				}
-			)
-		})
+document.querySelector(".add_category").addEventListener("click", () => {
+  let div = document.createElement("div");
+  div.classList.add("wrap_input_category");
+  let input = document.createElement("input");
+  input.classList.add("input_category");
+  input.required = true;
+  input.placeholder = "Category Name";
+  let btnSave = document.createElement("span");
+  let btnCancel = document.createElement("span");
+  btnSave.textContent = "save";
+  btnSave.classList.add("save");
+  btnCancel.textContent = "cancel";
+  btnCancel.classList.add("cancel");
+  btnCancel.addEventListener("click", (e) => {
+    e.preventDefault();
+    btnCancel.parentElement.remove();
+  });
+  document.querySelector(".category_items").append(div);
+  div.append(input, btnSave, btnCancel);
+  btnCancel.addEventListener("click", () => {
+    btnCancel.parentElement.remove();
+  });
+  btnSave.addEventListener("click", () => {
+    if (btnSave.previousElementSibling.value.trim().length) {
+      fetch("http://localhost:3000/categories", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          name: btnSave.previousElementSibling.value,
+        }),
+      });
 
-		let res =confirm('do you want to reload the page')
-			if(res){
-				window.location.reload()
-			}
-		}
-
-	})
-
-
+      let res = confirm("do you want to reload the page");
+      if (res) {
+        window.location.reload();
+      }
+    }
+  });
 });
 
-(()=>{
-fetch('http://localhost:3000/categories').then((res)=>res.json()).then((res)=>{
-	document.querySelector('#product-category').innerHTML=''
-	res.forEach((el)=>{
-		document.querySelector('#product-category').innerHTML+=`
+(() => {
+  fetch("http://localhost:3000/categories")
+    .then((res) => res.json())
+    .then((res) => {
+      document.querySelector("#product-category").innerHTML = "";
+      res.forEach((el) => {
+        document.querySelector("#product-category").innerHTML += `
 		<option value="${el.name}">${el.name}</option>
-		`
-	})
-})
-fetch('http://localhost:3000/categories').then((res)=>res.json()).then((res)=>{
-	document.querySelector('#product-category1').innerHTML=''
-	res.forEach((el)=>{
-		document.querySelector('#product-category1').innerHTML+=`
+		`;
+      });
+    });
+  fetch("http://localhost:3000/categories")
+    .then((res) => res.json())
+    .then((res) => {
+      document.querySelector("#product-category1").innerHTML = "";
+      res.forEach((el) => {
+        document.querySelector("#product-category1").innerHTML += `
 		<option value="${el.name}">${el.name}</option>
-		`
-	})
-})
-})()
-function categoryDeteleFn(id){
-	fetch(`http://localhost:3000/categories/${id}`,{
-		method:'DELETE'
-	})
-	let res =confirm('do you want to reload the page')
-	if(res){
-		window.location.reload()
-	}
+		`;
+      });
+    });
+})();
+function categoryDeteleFn(id) {
+  fetch(`http://localhost:3000/categories/${id}`, {
+    method: "DELETE",
+  });
+  let res = confirm("do you want to reload the page");
+  if (res) {
+    window.location.reload();
+  }
 }
 
+(() => {
+  fetch("http://localhost:3000/products")
+    .then((res) => res.json())
+    .then((res) => {
+      res.forEach((el) => {
+        document.querySelector("#recentProduct-table").innerHTML += `
+			<tr>
+			<td class="customer-name"><img src="${el.images[0]}" alt=""><h4>${el.title}</h4></td>
+			<td>${el.category}</td>
+			  <td>${el.price}</td>
+			  <td>${el.description}</td>
+		  </tr>
+		`;
+      });
+    });
+})();
 
+let search = document.querySelector("#searchForProducts");
+let oneClick = true;
+let input = null;
+let btn = null;
+document.querySelector(".fa-magnifying-glass").addEventListener("click", () => {
+  if (oneClick) {
+    input = document.createElement("input");
+    input.id = "inputForSeach";
+    btn = document.createElement("span");
+    btn.textContent = "search";
+    btn.addEventListener("click", () => {
+      fetch("http://localhost:3000/products")
+        .then((res) => res.json())
+        .then((res) => {
+          document.querySelector("#recentProduct-table").innerHTML = `
+			<tr>
+		<th>Products</th>
+		<th>Category</th>
+		<th>Price</th>
+		<th>Description</th>
+	  </tr>`;
+          res.forEach((el) => {
+            if (
+              el.title
+                .toLowerCase()
+                .includes(
+                  document.querySelector("#inputForSeach").value.toLowerCase()
+                )
+            ) {
+              document.querySelector("#recentProduct-table").innerHTML += `
+					<tr>
+					<td class="customer-name"><img src="${el.images[0]}" alt=""><h4>${el.title}</h4></td>
+					<td>${el.category}</td>
+					  <td>${el.price}</td>
+					  <td>${el.description}</td>
+				  </tr>
+				`;
+            }
+          });
+        });
+    });
+    search.append(input, btn);
+    input.placeholder = "search a product";
+    search.classList.add("OnSearch");
+    input.focus();
+    oneClick = false;
+  } else {
+    input.remove();
+    btn.remove();
+    search.classList.remove("OnSearch");
+    fetch("http://localhost:3000/products")
+      .then((res) => res.json())
+      .then((res) => {
+        document.querySelector("#recentProduct-table").innerHTML = `
+		<tr>
+	<th>Products</th>
+	<th>Category</th>
+	<th>Price</th>
+	<th>Description</th>
+  </tr>`;
+        res.forEach((el) => {
+          document.querySelector("#recentProduct-table").innerHTML += `
+				<tr>
+				<td class="customer-name"><img src="${el.images[0]}" alt=""><h4>${el.title}</h4></td>
+				<td>${el.category}</td>
+				  <td>${el.price}</td>
+				  <td>${el.description}</td>
+			  </tr>
+			`;
+        });
+      });
+    oneClick = true;
+  }
+});
+
+// Auth
+// window.onload = checkLogin;
+// window.onpopstate = checkLogin;
+// document.addEventListener("DOMContentLoaded", checkLogin);
+
+// function isUserRegistered() {
+//   return sessionStorage.getItem("AdminId") !== null;
+// }
+
+// function checkLogin() {
+//   if (!isUserRegistered()) {
+//     window.location.href = "/login/login.html";
+//   }
+// }

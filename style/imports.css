@@ -232,11 +232,37 @@ button {
   gap: 42px;
   align-items: center;
   border-bottom: 1px solid rgba(35, 35, 33, 0.2);
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   z-index: 3;
+}
+.top-navbar .OnSearch {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: space-between;
+}
+.top-navbar .OnSearch span {
+  background-color: rgb(0, 63, 237);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.top-navbar .OnSearch input {
+  width: 90%;
 }
 .top-navbar li {
   font-size: 20px;
+}
+.top-navbar li input {
+  font-size: 18px;
+  padding: 4px;
+  background-color: transparent;
 }
 .top-navbar li .account {
   text-transform: uppercase;
@@ -248,7 +274,7 @@ button {
   font-weight: 500;
   line-height: 120%;
   letter-spacing: 0.25px;
-  border: 1px solid #1C1C1A;
+  border: 1px solid #1c1c1a;
   text-align: center;
   padding: 11px 16px;
   border-radius: 8px;
@@ -263,7 +289,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 100px;
-  background-color: #E7E7E3;
+  background-color: #e7e7e3;
   width: 80%;
   margin-left: 20%;
 }
@@ -383,6 +409,12 @@ button {
 }
 .content .dashbord-section .recent-orders table {
   width: 100%;
+  padding: 29px;
+}
+.content .dashbord-section .recent-orders table tr th {
+  text-align: left;
+  padding: 25px 0 10px;
+  border-bottom: 0.5px solid rgba(35, 35, 33, 0.2);
 }
 .content .dashbord-section .recent-orders table tr td {
   padding: 25px 0 10px;
@@ -390,37 +422,12 @@ button {
 }
 .content .dashbord-section .recent-orders table tr td:first-child {
   display: flex;
-  gap: 30px;
-}
-.content .dashbord-section .recent-orders table tr td:first-child label {
-  cursor: pointer;
-}
-.content .dashbord-section .recent-orders table tr td:first-child input {
-  width: 20px;
-  cursor: pointer;
-}
-.content .dashbord-section .recent-orders table tr td:not(.content .dashbord-section .recent-orders table tr td:first-child) {
-  text-align: center;
-}
-.content .dashbord-section .recent-orders table tr:first-child {
-  color: rgba(35, 35, 33, 0.8);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 18.96px;
-}
-.content .dashbord-section .recent-orders table tr:first-child td {
-  padding: 16px 0;
-}
-.content .dashbord-section .recent-orders table tr .customer-name {
-  display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.content .dashbord-section .recent-orders table tr .customer-name img {
-  width: 40px;
-  background-color: #fff;
-  padding: 5px;
+.content .dashbord-section .recent-orders table tr td:first-child img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
@@ -1040,4 +1047,104 @@ button {
 }
 .content .update-section .card .right_card .btns-product #cancel_product, .content .update-section .card .right_card .btns-product #cancel_product1 {
   background-color: rgb(225, 0, 0);
+}
+
+.login-page {
+  background: linear-gradient(15deg, rgb(34, 162, 195) 0%, rgb(253, 45, 248) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 200px;
+  height: 100vh;
+}
+.login-page .navbar {
+  background-color: transparent;
+  box-shadow: none;
+}
+.login-page .navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  padding: 36px 20px;
+  margin: 0 auto;
+}
+.login-page .navbar .container ul li a {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+}
+.login-page .navbar .container ul li a i {
+  font-size: 40px;
+}
+.login-page .wrapper {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.login-page .wrapper .tost {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+.login-page .wrapper form {
+  margin-top: 100px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.681);
+  padding: 30px 20px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-page .wrapper form .success {
+  color: green;
+}
+.login-page .wrapper form .error {
+  color: rgb(255, 0, 0);
+}
+.login-page .wrapper form p {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.login-page .wrapper form p select {
+  padding: 10px;
+  border: 2px solid rgb(0, 132, 255);
+  background-color: transparent;
+  font-size: 20px;
+  outline: none;
+}
+.login-page .wrapper form p label {
+  color: rgb(206, 0, 247);
+  font-weight: 600;
+  font-size: 18px;
+}
+.login-page .wrapper form p input {
+  background-color: transparent;
+  font-size: 20px;
+  padding: 5px;
+  color: rgb(3, 9, 56);
+  border-bottom: 2px solid rgb(0, 132, 255);
+}
+.login-page .wrapper form button {
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  background-color: rgb(0, 132, 255);
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.login-page .wrapper form a {
+  display: block;
+  text-align: center;
+  font-size: 19px;
+  color: rgb(136, 11, 181);
 }/*# sourceMappingURL=imports.css.map */

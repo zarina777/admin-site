@@ -91,48 +91,29 @@
       // Recent ORDERS
       table {
         width: 100%;
+        padding: 29px;
         tr {
-          
+          th{
+            text-align: left;
+            padding: 25px 0 10px;
+            border-bottom: 0.5px solid #23232133;
+          }
           td {
             padding: 25px 0 10px;
             border-bottom: 0.5px solid #23232133;
             &:first-child{
               display: flex;
-              gap: 30px;
-              label{
-              cursor: pointer;
-              }
-              input{
-                width: 20px;
-              cursor: pointer;
-
+              align-items:center;
+              gap: 10px;
+              img{
+                width: 50px;
+                height: 50px;
+                border-radius:50%;
               }
             }
-            &:not(&:first-child){
-              text-align: center;
-            }
+           
           }
-          &:first-child{
-            color: #232321CC ;
-            font-size: 16px;
-            font-weight: 600;
-          line-height: 18.96px;
-            td{
-              padding: 16px 0;
-            }
-          }
-          .customer-name {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            img {
-              width: 40px;
-              background-color: #fff;
-              padding: 5px;
-              border-radius: 50%;
-            }
-          }
+          
         }
       }
     }
