@@ -19,7 +19,6 @@ addImg.addEventListener('click',(e)=>{
 	let input= document.createElement('input')
 	input.classList.add('img_input')
 	input.required=true
-	input.focus()
 	input.placeholder='Img Url'
 	let btn = document.createElement('span')
 	btn.textContent='delete'
@@ -30,6 +29,7 @@ addImg.addEventListener('click',(e)=>{
 	})
 	addImg.before(p)
 	p.append(input,btn)
+	input.focus()
 })
 addImg1.addEventListener('click',(e)=>{
 	e.preventDefault()

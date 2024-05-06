@@ -42,7 +42,6 @@ fetch(`http://localhost:3000/products/${id}`).then(res=>res.json()).then(res=>{
 			input.required=true
 			input.placeholder='Img Url'
 			input.value= el
-			input.focus()
 			let btn = document.createElement('span')
 			btn.textContent='delete'
 			btn.classList.add('delete-img')
@@ -52,6 +51,7 @@ fetch(`http://localhost:3000/products/${id}`).then(res=>res.json()).then(res=>{
 			})
 			p.append(input,btn)
 			document.querySelector('.add-imgUrl1').before(p)
+			input.focus()
 		
 		}
 	})
@@ -101,7 +101,17 @@ contentClear('.products-section')
 // window.location.reload()
 })
 
-
+document.querySelector('#cancel_product1').addEventListener('click',()=>{
+	let extras= document.querySelectorAll('.extras1')
+let wrapper= document.querySelector('.img-wrap1')
+for(let i=0;i<extras.length;i++){
+		wrapper.removeChild(extras[i])
+}
+document.querySelector('.img-place1').innerHTML=`<div class="img">
+<i class="fa-regular fa-image"></i>`
+	document.querySelector('#updateProductForm').reset()
+	contentClear('.products-section')
+})
 // fetch(`http://localhost:3000/products/${id}`,{
 // 	method:'PATCH',
 // 	headers:{

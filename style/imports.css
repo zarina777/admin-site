@@ -992,6 +992,6 @@ button {
 .content .update-section .card .right_card .btns-product #update_product {
   background-color: rgb(0, 76, 255);
 }
-.content .update-section .card .right_card .btns-product #cancel_product {
+.content .update-section .card .right_card .btns-product #cancel_product, .content .update-section .card .right_card .btns-product #cancel_product1 {
   background-color: rgb(225, 0, 0);
 }/*# sourceMappingURL=imports.css.map */
