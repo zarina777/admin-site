@@ -171,3 +171,94 @@ function writeToProducts() {
       });
     });
 })();
+
+
+
+// CATEGORY
+let categoryItemsWarp= document.querySelector('.category_items');
+(()=>{
+	fetch('http://localhost:3000/categories').then(res=>res.json()).then(data=>{
+		data.forEach((el)=>{
+			categoryItemsWarp.innerHTML+=`
+			<div class="item"><p>${el.name}</p> <span onclick="categoryDeteleFn('${el.id}')">-</span></div>
+			`
+		})
+	})
+})()
+
+document.querySelector('.add_category').addEventListener('click',()=>{
+	let div = document.createElement('div')
+	div.classList.add('wrap_input_category')
+	let input= document.createElement('input')
+	input.classList.add('input_category')
+	input.required=true
+	input.placeholder='Category Name'
+	let btnSave = document.createElement('span')
+	let btnCancel = document.createElement('span')
+	btnSave.textContent='save'
+	btnSave.classList.add('save')
+	btnCancel.textContent='cancel'
+	btnCancel.classList.add('cancel')
+	btnCancel.addEventListener('click',(e)=>{
+		e.preventDefault()
+		btnCancel.parentElement.remove()
+	})
+	document.querySelector('.category_items').append(div)
+	div.append(input,btnSave,btnCancel)
+	btnCancel.addEventListener('click',()=>{
+		btnCancel.parentElement.remove()
+	})
+	btnSave.addEventListener('click',()=>{
+		if(btnSave.previousElementSibling.value.trim().length){
+			fetch('http://localhost:3000/categories',{
+			method:'POST',
+			headers:{'Content-type':'application/json'},
+			body:JSON.stringify(
+				{
+		
+					name:btnSave.previousElementSibling.value
+			
+				}
+			)
+		})
+
+		let res =confirm('do you want to reload the page')
+			if(res){
+				window.location.reload()
+			}
+		}
+
+	})
+
+
+});
+
+(()=>{
+fetch('http://localhost:3000/categories').then((res)=>res.json()).then((res)=>{
+	document.querySelector('#product-category').innerHTML=''
+	res.forEach((el)=>{
+		document.querySelector('#product-category').innerHTML+=`
+		<option value="${el.name}">${el.name}</option>
+		`
+	})
+})
+fetch('http://localhost:3000/categories').then((res)=>res.json()).then((res)=>{
+	document.querySelector('#product-category1').innerHTML=''
+	res.forEach((el)=>{
+		document.querySelector('#product-category1').innerHTML+=`
+		<option value="${el.name}">${el.name}</option>
+		`
+	})
+})
+})()
+function categoryDeteleFn(id){
+	fetch(`http://localhost:3000/categories/${id}`,{
+		method:'DELETE'
+	})
+	let res =confirm('do you want to reload the page')
+	if(res){
+		window.location.reload()
+	}
+}
+
+

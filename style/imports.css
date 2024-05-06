@@ -86,6 +86,7 @@ button {
   padding-top: 40px;
   gap: 50px;
   align-items: center;
+  overflow-y: scroll;
 }
 .sidebar .logo {
   max-width: 174px;
@@ -148,30 +149,75 @@ button {
   transition: all 0.9s;
   display: none;
 }
-.sidebar .categories .category-dropdown .item {
+.sidebar .categories .category-dropdown .category_items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sidebar .categories .category-dropdown .category_items .wrap_input_category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.sidebar .categories .category-dropdown .category_items .wrap_input_category input {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: 1px solid #232321;
+  padding: 5px;
+  border-radius: 8px;
+}
+.sidebar .categories .category-dropdown .category_items .wrap_input_category span {
+  font-size: 11px;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sidebar .categories .category-dropdown .category_items .wrap_input_category .cancel {
+  background-color: rgb(255, 0, 0);
+}
+.sidebar .categories .category-dropdown .category_items .wrap_input_category .save {
+  background-color: rgb(0, 38, 255);
+}
+.sidebar .categories .category-dropdown .category_items .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 400;
   cursor: pointer;
 }
-.sidebar .categories .category-dropdown .item:hover {
-  opacity: 0.8;
-}
-.sidebar .categories .category-dropdown .item p {
+.sidebar .categories .category-dropdown .category_items .item p {
   font-size: 16px;
 }
-.sidebar .categories .category-dropdown .item span {
+.sidebar .categories .category-dropdown .category_items .item span {
   text-transform: capitalize;
   padding: 8px 14px;
   border-radius: 4px;
   font-size: 16px;
-  color: #232321;
-  background-color: #E7E7E3;
-}
-.sidebar .categories .category-dropdown .onItem span {
   color: #fff;
   background-color: #003F62;
+}
+.sidebar .categories .category-dropdown .category_items .item span:hover {
+  opacity: 0.8;
+}
+.sidebar .categories .category-dropdown .add_category_btn-wrap {
+  text-align: center;
+}
+.sidebar .categories .category-dropdown .add_category_btn-wrap .add_category {
+  background-color: rgb(115, 173, 227);
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sidebar .categories .category-dropdown .add_category_btn-wrap .add_category:hover {
+  opacity: 0.7;
 }
 
 .top-navbar {
