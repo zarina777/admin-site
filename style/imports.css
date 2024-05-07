@@ -58,6 +58,7 @@ button {
   text-align: left;
 }
 .admin-model .flex {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
 }

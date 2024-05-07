@@ -416,3 +416,9 @@ let isSuperAdmin = JSON.parse(sessionStorage.getItem("AdminId"));
 if (isSuperAdmin.user == "superadmin") {
   document.querySelector(".nav-admins").classList.remove("dnone");
 }
+document.querySelector("#logout").addEventListener("click", () => {
+  fetch(`http://localhost:3000/${isSuperAdmin.user}/${isSuperAdmin.id}`, {
+    method: "DELETE",
+  });
+  window.location.href = "/login/login.html";
+});
