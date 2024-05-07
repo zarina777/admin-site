@@ -103,19 +103,17 @@ document.querySelector("#cancel_product1").addEventListener("click", () => {
 });
 
 // EDIT ADMIN
-
+let loginID_admin1 = document.querySelector("#loginID_admin1");
+let firstname_admin1 = document.querySelector("#firstname_admin1");
+let lastname_admin1 = document.querySelector("#lastname_admin1");
+let password_admin1 = document.querySelector("#password_admin1");
+let email_admin1 = document.querySelector("#email_admin1");
+let imgURL_admin1 = document.querySelector("#imgURL_admin1");
+let admin_category1 = document.querySelector("#admin_category1");
+let editFormAdmin = document.querySelector("#addAdmin1");
 function editAdmin(id) {
-  let loginID_admin1 = document.querySelector("#loginID_admin1");
-  let firstname_admin1 = document.querySelector("#firstname_admin1");
-  let lastname_admin1 = document.querySelector("#lastname_admin1");
-  let password_admin1 = document.querySelector("#password_admin1");
-  let email_admin1 = document.querySelector("#password_admin1");
-  let imgURL_admin1 = document.querySelector("#imgURL_admin1");
-  contentClear(".editAdmin-section");
   fetch(`http://localhost:3000/admin/${id}`)
-    .then((res) => {
-      res.json();
-    })
+    .then((res) => res.json())
     .then((el) => {
       loginID_admin1.value = el.login;
       firstname_admin1.value = el.firstName;
@@ -127,7 +125,74 @@ function editAdmin(id) {
         ".img-placeAdmin1"
       ).innerHTML = `<img src='${el.image}'>`;
     });
+  editFormAdmin.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(`http://localhost:3000/admin/${id}`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        id: loginID_admin1.value,
+        login: loginID_admin1.value,
+        firstName: firstname_admin1.value,
+        lastName: lastname_admin1.value,
+        email: email_admin1.value,
+        image: imgURL_admin1.value,
+        password: password_admin1.value,
+      }),
+    });
+    contentClear(".admins-section");
+    let res = confirm("do you want to reload the page");
+    if (res) {
+      window.location.reload();
+    }
+  });
+  contentClear(".editAdmin-section");
 }
+function editSuperAdmin(id) {
+  contentClear(".editAdmin-section");
+  fetch(`http://localhost:3000/superadmin/${id}`)
+    .then((res) => res.json())
+    .then((el) => {
+      loginID_admin1.value = el.login;
+      firstname_admin1.value = el.firstName;
+      lastname_admin1.value = el.lastName;
+      password_admin1.value = el.password;
+      email_admin1.value = el.email;
+      imgURL_admin1.value = el.image;
+      admin_category1.value = "superadmin";
+
+      document.querySelector(
+        ".img-placeAdmin1"
+      ).innerHTML = `<img src='${el.image}'>`;
+    });
+  editFormAdmin.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(`http://localhost:3000/superadmin/${id}`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        id: loginID_admin1.value,
+        login: loginID_admin1.value,
+        firstName: firstname_admin1.value,
+        lastName: lastname_admin1.value,
+        email: email_admin1.value,
+        image: imgURL_admin1.value,
+        password: password_admin1.value,
+      }),
+    });
+    contentClear(".admins-section");
+    let res = confirm("do you want to reload the page");
+    if (res) {
+      window.location.reload();
+    }
+  });
+}
+// id: loginID_admin1.value ,
+// login:  loginID_admin1.value ,
+// firstName: firstname_admin1.value,
+// lastName: lastname_admin1.value,
+// email: email_admin1.value,
+// image:imgURL_admin1.value ,
 // id: document.querySelector("#loginID_admin"),
 //       firstName: document.querySelector("#firstname_admin").value,
 //       lastName: document.querySelector("#lastname_admin").value,

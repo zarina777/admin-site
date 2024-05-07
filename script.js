@@ -397,17 +397,22 @@ document.querySelector(".fa-magnifying-glass").addEventListener("click", () => {
     });
 })();
 
-// Auth
-// window.onload = checkLogin;
-// window.onpopstate = checkLogin;
-// document.addEventListener("DOMContentLoaded", checkLogin);
+// Auth;
+window.onload = checkLogin;
+window.onpopstate = checkLogin;
+document.addEventListener("DOMContentLoaded", checkLogin);
 
-// function isUserRegistered() {
-//   return sessionStorage.getItem("AdminId") !== null;
-// }
+function isUserRegistered() {
+  return sessionStorage.getItem("AdminId") !== null;
+}
 
-// function checkLogin() {
-//   if (!isUserRegistered()) {
-//     window.location.href = "/login/login.html";
-//   }
-// }
+function checkLogin() {
+  if (!isUserRegistered()) {
+    window.location.href = "/login/login.html";
+  }
+}
+
+let isSuperAdmin = JSON.parse(sessionStorage.getItem("AdminId"));
+if (isSuperAdmin.user == "superadmin") {
+  document.querySelector(".nav-admins").classList.remove("dnone");
+}
