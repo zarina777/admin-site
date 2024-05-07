@@ -67,6 +67,9 @@ sideBarNavbar.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("nav-order")) {
     contentClear(".orders-section");
     navClick(".nav-order");
+  } else if (e.target.classList.contains("nav-admins")) {
+    contentClear(".admins-section");
+    navClick(".nav-admins");
   }
 });
 const accountBtn = document.querySelector("#account");
@@ -349,6 +352,50 @@ document.querySelector(".fa-magnifying-glass").addEventListener("click", () => {
     oneClick = true;
   }
 });
+
+// ADMINS
+(() => {
+  fetch("http://localhost:3000/superadmin")
+    .then((res) => res.json())
+    .then((data) => {
+      document.querySelector(".cards_superadmin").innerHTML = "";
+      data.forEach((el) => {
+        document.querySelector(".cards_superadmin").innerHTML += `
+    <div class="card_superadmin">
+             <div class="img-warp-admin"> <img src="${el.image}" alt="" /></div> 
+              <h5>${el.firstName} ${el.lastName}</h5>
+              <span>${el.login}: ${el.password} </span>
+              <p>${el.email}</p>
+              <div class="btns_admins">
+                <button onclick='deleteSuperAdmin("${el.id}")' class="delete_superadmin">Delete</button>
+                <button onclick='editSuperAdmin(
+                  "${el.id}"
+                )'  class="edit_superadmin">Edit</button>
+              </div>
+            </div>`;
+      });
+    });
+  fetch("http://localhost:3000/admin")
+    .then((res) => res.json())
+    .then((data) => {
+      document.querySelector(".cards_admin").innerHTML = "";
+      data.forEach((el) => {
+        document.querySelector(".cards_admin").innerHTML += `
+    <div class="card_admin">
+    <div class="img-warp-admin"> <img src="${el.image}" alt="" /></div> 
+              <h5>${el.firstName} ${el.lastName}</h5>
+              <span>${el.login}: ${el.password} </span>
+              <p>${el.email}</p>
+              <div class="btns_admins">
+                <button onclick='deleteAdmin("${el.id}")' class="delete_superadmin">Delete</button>
+                <button onclick='editAdmin(
+                 "${el.id}"
+                )'  class="edit_superadmin">Edit</button>
+              </div>
+            </div>`;
+      });
+    });
+})();
 
 // Auth
 // window.onload = checkLogin;

@@ -1,0 +1,136 @@
+.content {
+  .admins-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28.44px;
+        color: #000000;
+      }
+      #addNewAdmins {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #232321;
+        color: #fff;
+        padding: 15px 26px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.59px;
+        letter-spacing: 0.25px;
+      }
+    }
+    h4 {
+      color: #5e5e5e;
+      font-size: 20px;
+    }
+    .cards_superadmin {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      gap: 20px;
+      .card_superadmin {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.795);
+        .img-warp-admin {
+          height: 240px;
+          img {
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        h5 {
+          font-size: 20px;
+          color: blue;
+        }
+        span {
+          color: red;
+        }
+        p {
+          color: #707070;
+        }
+        .btns_admins {
+          display: flex;
+          gap: 10px;
+          button {
+            &:first-child {
+              background-color: rgb(255, 46, 46);
+            }
+            &:last-child {
+              background-color: rgb(0, 38, 255);
+            }
+            // text-align: center;
+            width: 70px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+    .cards_admin {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      gap: 20px;
+      .card_admin {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.795);
+        .img-warp-admin {
+          height: 240px;
+
+          img {
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+        h5 {
+          font-size: 20px;
+          color: blue;
+        }
+        span {
+          color: red;
+        }
+        p {
+          color: #707070;
+        }
+        .btns_admins {
+          display: flex;
+          gap: 10px;
+          button {
+            &:first-child {
+              background-color: rgb(255, 46, 46);
+            }
+            &:last-child {
+              background-color: rgb(0, 38, 255);
+            }
+            // text-align: center;
+            width: 70px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

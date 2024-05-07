@@ -49,7 +49,7 @@ button {
   top: 17%;
   right: 50px;
   position: fixed;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   z-index: 15;
 }
 .admin-model h5 {
@@ -73,6 +73,33 @@ button {
   display: flex !important;
 }
 
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000000;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  -webkit-animation: l3 1s infinite linear;
+          animation: l3 1s infinite linear;
+}
+
+@-webkit-keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
 .sidebar {
   border-right: 1px solid rgba(35, 35, 33, 0.2);
   position: fixed;
@@ -84,22 +111,22 @@ button {
   flex-direction: column;
   padding: 24px;
   padding-top: 40px;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
   overflow-y: scroll;
 }
 .sidebar .logo {
-  max-width: 174px;
+  max-width: 160px;
 }
 .sidebar ul {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 10px;
 }
 .sidebar ul .onContent {
   color: #fff;
-  background-color: #003F62;
+  background-color: #003f62;
 }
 .sidebar ul li {
   display: flex;
@@ -119,7 +146,7 @@ button {
 }
 .sidebar ul li:hover {
   color: #fff;
-  background-color: #003F62;
+  background-color: #003f62;
   cursor: pointer;
 }
 .sidebar ul li i {
@@ -199,7 +226,7 @@ button {
   border-radius: 4px;
   font-size: 16px;
   color: #fff;
-  background-color: #003F62;
+  background-color: #003f62;
 }
 .sidebar .categories .category-dropdown .category_items .item span:hover {
   opacity: 0.8;
@@ -469,32 +496,6 @@ button {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
-  /* HTML: <div class="loader"></div> */
-}
-.content .products-section .products-wrap .loader {
-  width: 50px;
-  padding: 8px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #000000;
-  --_m: conic-gradient(#0000 10%, #000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-  mask: var(--_m);
-  -webkit-mask-composite: source-out;
-  mask-composite: subtract;
-  -webkit-animation: l3 1s infinite linear;
-          animation: l3 1s infinite linear;
-}
-@-webkit-keyframes l3 {
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes l3 {
-  to {
-    transform: rotate(1turn);
-  }
 }
 .content .products-section .products-wrap .product {
   border-radius: 16px;
@@ -935,7 +936,9 @@ button {
   flex-direction: column;
   gap: 16px;
 }
-.content .update-section .card .left_card p input, .content .update-section .card .left_card p textarea, .content .update-section .card .left_card p select {
+.content .update-section .card .left_card p input,
+.content .update-section .card .left_card p textarea,
+.content .update-section .card .left_card p select {
   font-size: 16px;
   font-weight: 400;
   line-height: 19.36px;
@@ -1045,7 +1048,8 @@ button {
 .content .update-section .card .right_card .btns-product #update_product {
   background-color: rgb(0, 76, 255);
 }
-.content .update-section .card .right_card .btns-product #cancel_product, .content .update-section .card .right_card .btns-product #cancel_product1 {
+.content .update-section .card .right_card .btns-product #cancel_product,
+.content .update-section .card .right_card .btns-product #cancel_product1 {
   background-color: rgb(225, 0, 0);
 }
 
@@ -1147,4 +1151,386 @@ button {
   text-align: center;
   font-size: 19px;
   color: rgb(136, 11, 181);
+}
+
+.content .admins-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.content .admins-section .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .admins-section .info h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.44px;
+  color: #000000;
+}
+.content .admins-section .info #addNewAdmins {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #232321;
+  color: #fff;
+  padding: 15px 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.59px;
+  letter-spacing: 0.25px;
+}
+.content .admins-section h4 {
+  color: #5e5e5e;
+  font-size: 20px;
+}
+.content .admins-section .cards_superadmin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 20px;
+}
+.content .admins-section .cards_superadmin .card_superadmin {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.795);
+}
+.content .admins-section .cards_superadmin .card_superadmin .img-warp-admin {
+  height: 240px;
+}
+.content .admins-section .cards_superadmin .card_superadmin .img-warp-admin img {
+  height: 100%;
+  border-radius: 50%;
+}
+.content .admins-section .cards_superadmin .card_superadmin h5 {
+  font-size: 20px;
+  color: blue;
+}
+.content .admins-section .cards_superadmin .card_superadmin span {
+  color: red;
+}
+.content .admins-section .cards_superadmin .card_superadmin p {
+  color: #707070;
+}
+.content .admins-section .cards_superadmin .card_superadmin .btns_admins {
+  display: flex;
+  gap: 10px;
+}
+.content .admins-section .cards_superadmin .card_superadmin .btns_admins button {
+  width: 70px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+.content .admins-section .cards_superadmin .card_superadmin .btns_admins button:first-child {
+  background-color: rgb(255, 46, 46);
+}
+.content .admins-section .cards_superadmin .card_superadmin .btns_admins button:last-child {
+  background-color: rgb(0, 38, 255);
+}
+.content .admins-section .cards_admin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 20px;
+}
+.content .admins-section .cards_admin .card_admin {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.795);
+}
+.content .admins-section .cards_admin .card_admin .img-warp-admin {
+  height: 240px;
+}
+.content .admins-section .cards_admin .card_admin .img-warp-admin img {
+  height: 100%;
+  border-radius: 50%;
+}
+.content .admins-section .cards_admin .card_admin h5 {
+  font-size: 20px;
+  color: blue;
+}
+.content .admins-section .cards_admin .card_admin span {
+  color: red;
+}
+.content .admins-section .cards_admin .card_admin p {
+  color: #707070;
+}
+.content .admins-section .cards_admin .card_admin .btns_admins {
+  display: flex;
+  gap: 10px;
+}
+.content .admins-section .cards_admin .card_admin .btns_admins button {
+  width: 70px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+.content .admins-section .cards_admin .card_admin .btns_admins button:first-child {
+  background-color: rgb(255, 46, 46);
+}
+.content .admins-section .cards_admin .card_admin .btns_admins button:last-child {
+  background-color: rgb(0, 38, 255);
+}
+
+.content .createAdmin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.content .createAdmin-section .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.content .createAdmin-section .info h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.44px;
+}
+.content .createAdmin-section .info p {
+  font-size: 16px;
+  line-height: 21.79px;
+  letter-spacing: 1px;
+}
+.content .createAdmin-section .card {
+  border-radius: 16px;
+  background-color: #fff;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 24px;
+}
+.content .createAdmin-section .card .left_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.content .createAdmin-section .card .left_card p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.content .createAdmin-section .card .left_card p input,
+.content .createAdmin-section .card .left_card p select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: 1px solid #232321;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+.content .createAdmin-section .card .right_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 100px;
+}
+.content .createAdmin-section .card .right_card p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.content .createAdmin-section .card .right_card p input,
+.content .createAdmin-section .card .right_card p select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: 1px solid #232321;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+.content .createAdmin-section .card .right_card .img-placewrap {
+  width: 300px;
+  height: 200px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .createAdmin-section .card .right_card .img-placewrap img {
+  width: 100%;
+  height: 100%;
+}
+.content .createAdmin-section .card .right_card .img-placewrap .img-placeAdmin {
+  height: 100%;
+  width: 250px;
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.content .createAdmin-section .card .right_card .img-placewrap .img-placeAdmin i {
+  font-size: 40px;
+}
+.content .createAdmin-section .card .right_card .btns-product {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+.content .createAdmin-section .card .right_card .btns-product button {
+  padding: 15px;
+  width: 33%;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.content .createAdmin-section .card .right_card .btns-product #add_admin {
+  background-color: rgb(2, 2, 255);
+}
+.content .createAdmin-section .card .right_card .btns-product #update_admin {
+  background-color: rgb(0, 76, 255);
+}
+.content .createAdmin-section .card .right_card .btns-product #cancel_admin {
+  background-color: rgb(225, 0, 0);
+}
+
+.content .editAdmin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.content .editAdmin-section .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.content .editAdmin-section .info h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28.44px;
+}
+.content .editAdmin-section .info p {
+  font-size: 16px;
+  line-height: 21.79px;
+  letter-spacing: 1px;
+}
+.content .editAdmin-section .card {
+  border-radius: 16px;
+  background-color: #fff;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 24px;
+}
+.content .editAdmin-section .card .left_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.content .editAdmin-section .card .left_card p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.content .editAdmin-section .card .left_card p input,
+.content .editAdmin-section .card .left_card p select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: 1px solid #232321;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+.content .editAdmin-section .card .right_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 100px;
+}
+.content .editAdmin-section .card .right_card p {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.content .editAdmin-section .card .right_card p input,
+.content .editAdmin-section .card .right_card p select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.5px;
+  width: 100%;
+  border: 1px solid #232321;
+  padding: 14px 16px;
+  border-radius: 8px;
+}
+.content .editAdmin-section .card .right_card .img-placewrap {
+  width: 300px;
+  height: 200px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .editAdmin-section .card .right_card .img-placewrap img {
+  width: 100%;
+  height: 100%;
+}
+.content .editAdmin-section .card .right_card .img-placewrap .img-placeAdmin1 {
+  height: 100%;
+  width: 250px;
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.content .editAdmin-section .card .right_card .img-placewrap .img-placeAdmin1 i {
+  font-size: 40px;
+}
+.content .editAdmin-section .card .right_card .btns-product {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+.content .editAdmin-section .card .right_card .btns-product button {
+  padding: 15px;
+  width: 33%;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.content .editAdmin-section .card .right_card .btns-product #add_admin1 {
+  background-color: rgb(2, 2, 255);
+}
+.content .editAdmin-section .card .right_card .btns-product #update_admin1 {
+  background-color: rgb(0, 76, 255);
+}
+.content .editAdmin-section .card .right_card .btns-product #cancel_admin1 {
+  background-color: rgb(225, 0, 0);
 }/*# sourceMappingURL=imports.css.map */

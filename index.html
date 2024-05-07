@@ -56,7 +56,7 @@
           <i class="fa-regular fa-rectangle-list"></i>
           <span>Order list</span>
         </li>
-        <li class="nav-order">
+        <li class="nav-admins">
           <i class="fa-regular fa-user"></i>
           <span>Admins</span>
         </li>
@@ -444,6 +444,7 @@
             </div>
           </form>
         </div>
+
         <!-- UPDATE PRODUCT -->
         <div class="update-section">
           <div class="info">
@@ -504,6 +505,167 @@
               <div class="btns-product">
                 <button id="update_product">UPDATE</button>
                 <button type="reset" id="cancel_product1">CANCEL</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- ADMINS only seen by SuperAdmins -->
+        <div class="admins-section">
+          <div class="info">
+            <h3>Admins and Superadmins</h3>
+            <button id="addNewAdmins">
+              <i class="fa-solid fa-circle-plus"></i>
+              <span>ADD NEW ADMIN</span>
+            </button>
+          </div>
+          <h4>Super Admins</h4>
+          <div class="cards_superadmin">
+            <h2>Data is coming</h2>
+            <div class="loader"></div>
+          </div>
+          <h4>Admins</h4>
+          <div class="cards_admin">
+            <h2>Data is coming</h2>
+            <div class="loader"></div>
+          </div>
+        </div>
+
+        <!-- CREATE ADMIN -->
+        <div class="createAdmin-section">
+          <div class="info">
+            <h3>Add Admin or Superadmin</h3>
+            <p>Admins><span>Create Admin</span></p>
+          </div>
+          <form id="addAdmin" class="card">
+            <div class="left_card">
+              <p>
+                <label for="firstname_admin">Firstname </label>
+                <input
+                  type="text"
+                  placeholder="First name"
+                  id="firstname_admin"
+                />
+              </p>
+              <p>
+                <label for="lastname_admin">Lastname </label>
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  id="lastname_admin"
+                />
+              </p>
+              <p>
+                <label for="email_admin">Email </label>
+                <input
+                  type="email"
+                  placeholder="email@gmail.com"
+                  id="email_admin"
+                />
+              </p>
+              <p>
+                <label for="loginID_admin">Login id </label>
+                <input type="text" placeholder="Login Id" id="loginID_admin" />
+              </p>
+              <p>
+                <label for="password_admin">Password</label>
+                <input
+                  type="text"
+                  placeholder="Login password"
+                  id="password_admin"
+                />
+              </p>
+            </div>
+            <div class="right_card">
+              <div class="img-placewrap">
+                <div class="img-placeAdmin">
+                  <i class="fa-regular fa-image"></i>
+                </div>
+              </div>
+              <p>
+                <label for="imgURL_admin">Img URL</label>
+                <input type="text" placeholder="IMG URL" id="imgURL_admin" />
+              </p>
+              <p>
+                <label for="admin_category">Category</label>
+                <select id="admin_category">
+                  <option value="admin">ADMIN</option>
+                  <option value="superadmin">SUPER ADMIN</option>
+                </select>
+              </p>
+              <div class="btns-product">
+                <button type="submit" id="add_admin">ADD</button>
+                <button type="reset" id="cancel_admin">CANCEL</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- EDIT ADMIN -->
+        <div class="editAdmin-section">
+          <div class="info">
+            <h3>Edit Admin or Superadmin</h3>
+            <p>Admins><span>Edit Admin</span></p>
+          </div>
+          <form id="addAdmin1" class="card">
+            <div class="left_card">
+              <p>
+                <label for="firstname_admin11">Firstname </label>
+                <input
+                  type="text"
+                  placeholder="First name"
+                  id="firstname_admin1"
+                />
+              </p>
+              <p>
+                <label for="lastname_admin1">Lastname </label>
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  id="lastname_admin1"
+                />
+              </p>
+              <p>
+                <label for="email_admin1">Email </label>
+                <input
+                  type="email"
+                  placeholder="email@gmail.com"
+                  id="email_admin1"
+                />
+              </p>
+              <p>
+                <label for="loginID_admin1">Login id </label>
+                <input type="text" placeholder="Login Id" id="loginID_admin1" />
+              </p>
+              <p>
+                <label for="password_admin1">Password</label>
+                <input
+                  type="text"
+                  placeholder="Login password"
+                  id="password_admin1"
+                />
+              </p>
+            </div>
+            <div class="right_card">
+              <div class="img-placewrap">
+                <div class="img-placeAdmin1">
+                  <i class="fa-regular fa-image"></i>
+                </div>
+              </div>
+              <p>
+                <label for="imgURL_admin1">Img URL</label>
+                <input type="text" placeholder="IMG URL" id="imgURL_admin1" />
+              </p>
+              <p>
+                <label for="admin_category1">Category</label>
+                <select id="admin_category1">
+                  <option value="admin">ADMIN</option>
+                  <option value="superadmin">SUPER ADMIN</option>
+                </select>
+              </p>
+              <div class="btns-product">
+                <button type="submit" id="add_admin1">ADD</button>
+                <button type="reset" id="cancel_admin1">CANCEL</button>
               </div>
             </div>
           </form>
