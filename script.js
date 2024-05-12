@@ -27,10 +27,20 @@ categories.addEventListener("click", () => {
 function contentClear(content) {
   let children = document.querySelector(".content").children;
   let onContent = document.querySelector(content);
-  localStorage.setItem(
-    "onPage",
-    content == ".update-section" ? ".products-section" : content
-  );
+  let res;
+  if (content == ".update-section") {
+    res = ".products-section";
+  } else if (
+    content == ".editAdmin-section" ||
+    content == ".createAdmin-section" ||
+    content == ".admins-section"
+  ) {
+    res = ".dashbord-section";
+  } else {
+    res = content;
+  }
+
+  localStorage.setItem("onPage", res);
   for (let i = 0; i < children.length; i++) {
     if (children[i] !== onContent) {
       children[i].classList.add("dnone");
@@ -41,21 +51,9 @@ function contentClear(content) {
     }
   }
 }
+
 contentClear(pageInLocalStorage);
 navClick(navInLocalStorage);
-function navClick(element) {
-  let clicked = document.querySelector(element);
-  localStorage.setItem("onNavPage", element);
-  for (let i = 0; i < sideBarNavbar.children.length; i++) {
-    if (clicked == sideBarNavbar.children[i]) {
-      sideBarNavbar.children[i].classList.add("onContent");
-    } else {
-      if (sideBarNavbar.children[i].classList.contains("onContent")) {
-        sideBarNavbar.children[i].classList.remove("onContent");
-      }
-    }
-  }
-}
 
 sideBarNavbar.addEventListener("click", (e) => {
   if (e.target.classList.contains("nav-dashbord")) {
@@ -267,7 +265,7 @@ function categoryDeteleFn(id) {
     .then((res) => {
       res.forEach((el) => {
         document.querySelector("#recentProduct-table").innerHTML += `
-			<tr>
+			<tr class='hovered' onclick='directAboutProduct("${el.id}")'>
 			<td class="customer-name"><img src="${el.images[0]}" alt=""><h4>${el.title}</h4></td>
 			<td>${el.category}</td>
 			  <td>${el.price}</td>
@@ -277,7 +275,9 @@ function categoryDeteleFn(id) {
       });
     });
 })();
-
+function directAboutProduct(id) {
+  window.location.href = ` /about-product/index.html?product-id=${id}`;
+}
 let search = document.querySelector("#searchForProducts");
 let oneClick = true;
 let input = null;
@@ -308,7 +308,7 @@ document.querySelector(".fa-magnifying-glass").addEventListener("click", () => {
                 )
             ) {
               document.querySelector("#recentProduct-table").innerHTML += `
-					<tr>
+					<tr class='hovered' onclick='directAboutProduct("${el.id}")'>
 					<td class="customer-name"><img src="${el.images[0]}" alt=""><h4>${el.title}</h4></td>
 					<td>${el.category}</td>
 					  <td>${el.price}</td>
@@ -422,3 +422,23 @@ document.querySelector("#logout").addEventListener("click", () => {
   });
   window.location.href = "/login/login.html";
 });
+
+function navClick(element) {
+  let clicked = document.querySelector(element);
+  if (element == ".nav-admins") {
+    res = ".nav-dashbord";
+  } else {
+    res = element;
+  }
+
+  localStorage.setItem("onNavPage", res);
+  for (let i = 0; i < sideBarNavbar?.children.length; i++) {
+    if (clicked == sideBarNavbar.children[i]) {
+      sideBarNavbar.children[i].classList.add("onContent");
+    } else {
+      if (sideBarNavbar.children[i].classList.contains("onContent")) {
+        sideBarNavbar.children[i].classList.remove("onContent");
+      }
+    }
+  }
+}

@@ -90,3 +90,10 @@ button {
     transform: rotate(1turn);
   }
 }
+.hovered {
+  &:hover {
+    background-color: rgb(225, 225, 225);
+    cursor: pointer;
+    text-align: center;
+  }
+}

@@ -30,7 +30,9 @@ form.addEventListener("submit", (e) => {
           success.textContent = "You successfully logged in";
           setTimeout(() => {
             success.textContent = "";
+            window.location.reload();
             window.location.href = "/index.html";
+            form.reset();
           }, 2000);
         }
       });

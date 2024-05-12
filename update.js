@@ -187,6 +187,27 @@ function editSuperAdmin(id) {
     }
   });
 }
+
+function deleteSuperAdmin(id) {
+  fetch(`http://localhost:3000/superadmin/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    let update = confirm("do you want to reload the site");
+    if (update) {
+      window.location.reload();
+    }
+  });
+}
+function deleteAdmin(id) {
+  fetch(`http://localhost:3000/admin/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    let update = confirm("do you want to reload the site");
+    if (update) {
+      window.location.reload();
+    }
+  });
+}
 // id: loginID_admin1.value ,
 // login:  loginID_admin1.value ,
 // firstName: firstname_admin1.value,

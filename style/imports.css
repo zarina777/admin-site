@@ -101,6 +101,12 @@ button {
     transform: rotate(1turn);
   }
 }
+.hovered:hover {
+  background-color: rgb(225, 225, 225);
+  cursor: pointer;
+  text-align: center;
+}
+
 .sidebar {
   border-right: 1px solid rgba(35, 35, 33, 0.2);
   position: fixed;
@@ -494,7 +500,7 @@ button {
 }
 .content .products-section .products-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 14px;
   flex-wrap: wrap;
 }
@@ -1534,4 +1540,57 @@ button {
 }
 .content .editAdmin-section .card .right_card .btns-product #cancel_admin1 {
   background-color: rgb(225, 0, 0);
+}
+
+.pbody {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_product_container {
+  border-radius: 15px;
+  border: 1px solid #333;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(88, 88, 88);
+  padding: 20px;
+  align-items: center;
+}
+.about_product_container .img_display .carousel-item {
+  height: 400px;
+  padding: 20px;
+}
+.about_product_container .img_display .carousel-item img {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+.about_product_container .info {
+  background-color: #fff;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  border: 1px solid #333;
+  gap: 20px;
+  padding: 20px;
+}
+.about_product_container .info h2 {
+  font-weight: 600;
+  font-size: 36px;
+}
+.about_product_container .info p {
+  font-size: 25px;
+  font-style: italic;
+}
+.about_product_container .info span {
+  font-size: 30px;
 }/*# sourceMappingURL=imports.css.map */
